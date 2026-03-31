@@ -16,6 +16,7 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
@@ -26,6 +27,53 @@ header {
 
 header h1 {
   margin-bottom: 10px;
+}
+
+.account-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.account-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.account-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.user-menu {
+  background-color: white;
+  color: #333;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  min-width: 180px;
+}
+
+.user-menu button {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.user-menu button:last-of-type {
+  margin-bottom: 0;
+}
+
+.auth-status {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
 }
 
 main {
@@ -192,9 +240,53 @@ button:hover {
   display: none;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-btn {
+  background-color: #607d8b;
+}
+
+.secondary-btn:hover {
+  background-color: #78909c;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 640px) {
+  .account-controls {
+    top: 8px;
+    right: 8px;
+  }
+
+  .user-menu {
+    min-width: 150px;
+  }
 }
